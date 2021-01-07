@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
-import Todolist from "./components/TodoList";
+import TodoList from "./components/TodoList";
 
 export default function App() {
   // In [ ] of our useState contain the following state-variables:
@@ -18,7 +18,7 @@ export default function App() {
         taskList={taskList}
         setTaskList={setTaskList}
       />
-      <Todolist />
+      <TodoList taskList={taskList} setTaskList={setTaskList} />
     </div>
   );
 }
