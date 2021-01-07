@@ -1,35 +1,38 @@
-import React from "react";
-
-      export default function Form({inputValue, setInputValue,taskList, setTaskList}) {
-  // function to get input value
+// component: Form
+// create a unique id https://www.npmjs.com/package/uuid
+export default function Form({
+  inputValue,
+  setInputValue,
+  taskList,
+  setTaskList,
+}) {
+  // function to get input value 'onChange' of our input-field
+  // will run everytime the input changes
   const handleInputOnChange = (e) => {
     //console.log(e.target.value);
     setInputValue(e.target.value);
-    
   };
-
-  // function to prevent from Reload
+  // function to handle what happens 'onClick' of submit button
   const handleSubmit = (e) => {
-    setTaskList([...taskList,
-      { 
-      text: inputValue, 
-      id: Math.floor(Math.random() * 10000), 
-      done: false, 
-    }
-  
-  ]
-      );
-      setInputValue("");
-
+    setTaskList([
+      ...taskList, // spread-operator (preserve/pass existing data of array)
+      // here we create an object:
+      {
+        text: inputValue,
+        id: Math.floor(Math.random() * 10000),
+        done: false,
+      },
+    ]);
+    // then (re)set input value to empty string
+    setInputValue("");
+    // function to prevent from Reload
     e.preventDefault();
-
-
   };
 
   return (
     // JSX-content of our component
-    // to render it, import Form + add <Form /> to App.js
-    // Funktionen werden hier nur aufgerufen 
+    // To render our form, ' import Form '  and add  ' <Form /> ' to our App.js
+    // In the following input-form we only CALL our functions from ABOVE
     <form>
       <input
         onChange={handleInputOnChange}
@@ -43,6 +46,3 @@ import React from "react";
     </form>
   );
 }
-
-
-
