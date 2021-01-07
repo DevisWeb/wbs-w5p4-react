@@ -1,7 +1,19 @@
 // component: Todo
 
 // create a Todo component
-
+export default function Todo({ inputValue }) {
+  return (
+    <div>
+      <li>{inputValue}</li>
+      <button>
+        <i className="fas fa-check"></i>
+      </button>
+      <button>
+        <i className="far fa-trash-alt"></i>
+      </button>
+    </div>
+  );
+}
 // the JSX (inside return) will contain the html to display a task on the UI of our TodoList <ul>
 
 // therefore create a <li> element with the necessary buttons (such as check / delete)
