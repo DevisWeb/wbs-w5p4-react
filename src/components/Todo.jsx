@@ -1,26 +1,17 @@
 // component: Todo
 
 // create a Todo component
-export default function Todo({ inputValue }) {
+// this is our list-element that will be rendered in the TodoList <ul>
+export default function Todo({ text }) {
   return (
-    <div>
-      <li>{inputValue}</li>
-      <button>
+    <div className="Todo__div">
+      <li className="Todo__li-element">{text}</li>
+      <button className="Todo__btn Todo__btn-check">
         <i className="fas fa-check"></i>
       </button>
-      <button>
+      <button className="Todo__btn Todo__btn-trash">
         <i className="far fa-trash-alt"></i>
       </button>
     </div>
   );
 }
-// the JSX (inside return) will contain the html to display a task on the UI of our TodoList <ul>
-
-// therefore create a <li> element with the necessary buttons (such as check / delete)
-// remember that multiple html elements need to be wrapped in a container
-
-// for icons on the buttons use the following font-awesome icons:
-// <i class="fas fa-check"></i>
-// <i class="fas fa-trash"></i>
-// resource-links: https://fontawesome.com/icons/
-// notice: https://developer.mozilla.org/en-US/docs/Web/API/Element/className

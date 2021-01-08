@@ -1,5 +1,4 @@
-// create a unique id https://www.npmjs.com/package/uuid
-import { v4 as uuid } from "uuid"; // sb-add
+import { v4 as uuid } from "uuid"; // unique id, see https://www.npmjs.com/package/uuid
 
 // component: Form
 export default function Form({
@@ -8,42 +7,42 @@ export default function Form({
   taskList,
   setTaskList,
 }) {
-  // function to get input value 'onChange' of our input-field
-  // will run everytime the input changes
+  // function will run everytime the input changes: to get input value 'onChange' of our input-field
   const handleInputOnChange = (e) => {
-    //console.log(e.target.value);
     setInputValue(e.target.value);
   };
+
   // function to handle what happens 'onClick' of submit button
   const handleSubmit = (e) => {
     setTaskList([
-      ...taskList, // spread-operator (preserve/pass existing data of array)
-      // here we create an object:
+      // spread-operator (preserve/pass existing data of array)
+      ...taskList,
+
+      // CREATE an OBJECT - each object will be added to our array []:
       {
         text: inputValue,
         id: uuid(),
         done: false,
       },
     ]);
-    // then (re)set input value to empty string
-    setInputValue("");
-    // function to prevent from Reload
-    e.preventDefault();
+    setInputValue(""); // on submit, after object is created, (re)set input value to empty string
+    e.preventDefault(); // function to prevent from Reload
   };
 
   return (
-    // JSX-content of our component
+    // JSX-section of our component
     // To render our form, ' import Form '  and add  ' <Form /> ' to our App.js
     // In the following input-form we only CALL our functions from ABOVE
-    <form>
+
+    <form className="Form__input-form App-main__vertical">
       <input
         onChange={handleInputOnChange}
         type="text"
-        className="frm-input"
+        className="Form__input"
         value={inputValue}
       />
-      <button onClick={handleSubmit} type="submit" className="frm-btn">
-        <i className="fas fa-plus-square"></i>
+      <button onClick={handleSubmit} type="submit" className="Form__btn">
+        <i className="fas fa-plus"></i>
       </button>
     </form>
   );
