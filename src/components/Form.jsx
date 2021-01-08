@@ -1,5 +1,7 @@
-// component: Form
 // create a unique id https://www.npmjs.com/package/uuid
+import { v4 as uuid } from "uuid"; // sb-add
+
+// component: Form
 export default function Form({
   inputValue,
   setInputValue,
@@ -19,7 +21,7 @@ export default function Form({
       // here we create an object:
       {
         text: inputValue,
-        id: Math.floor(Math.random() * 10000),
+        id: uuid(),
         done: false,
       },
     ]);
