@@ -7,12 +7,12 @@ export default function TodoList({ taskList, setTaskList }) {
     // * notice: https://reactjs.org/docs/lists-and-keys.html
 
     <ul className="TodoList__ul App-main__vertical">
-      {taskList.map((taskObject) => (
+      {taskList.map((inputValue) => (
         <Todo
           setTaskList={setTaskList}
           taskList={taskList}
-          text={taskObject.text}
-          key={taskObject.id}
+          text={inputValue.text}
+          key={inputValue.id}
         />
       ))}
     </ul>
