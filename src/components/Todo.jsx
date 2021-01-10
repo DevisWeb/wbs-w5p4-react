@@ -39,6 +39,10 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
       })
     );
   };
+
+  const handleDelete = () => {
+    setTaskList(taskList.filter((item) => item.id !== taskObject.id));
+  };
   return (
     <div className="Todo__div">
       <li className={`Todo__li-element `}>
@@ -58,7 +62,7 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
           className={` ${taskObject.done ? "fas fa-plus" : "fas fa-check"}`}
         ></i>
       </button>
-      <button className="Todo__btn Todo__btn-trash">
+      <button onClick={handleDelete} className="Todo__btn Todo__btn-trash">
         <i className="far fa-trash-alt"></i>
       </button>
     </div>
