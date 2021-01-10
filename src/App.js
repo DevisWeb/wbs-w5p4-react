@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
-import TodoList from "./components/TodoList";
+import TodoList from "./components/Todolist";
 
 export default function App() {
   // In [ ] of our useState contain the following state-variables:
