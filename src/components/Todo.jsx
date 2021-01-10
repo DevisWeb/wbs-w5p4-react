@@ -39,6 +39,15 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
       })
     );
   };
+  const handleDelete = () => {
+    setTaskList(
+      taskList.map((item) => {
+        if (item.id === taskObject.id) {
+          return {};
+        }
+      })
+    );
+  };
   return (
     <div className="Todo__div">
       <li className={`Todo__li-element `}>
@@ -59,6 +68,7 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
         ></i>
       </button>
       <button className="Todo__btn Todo__btn-trash">
+        conClick={ha}
         <i className="far fa-trash-alt"></i>
       </button>
     </div>
