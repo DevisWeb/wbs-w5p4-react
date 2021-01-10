@@ -1,3 +1,7 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 .App {
   text-align: center;
   background-color: #282c34;
@@ -30,6 +34,8 @@
   width: 30rem;
   margin: 1rem auto;
   padding: 1px;
+  background: rgba(97, 218, 251, 0.2);
+  padding: 1rem;
 }
 
 /* Stylings for Components - todo later-on: Move to seperate css.files for components */
@@ -39,7 +45,7 @@
   background: white;
   width: 25rem;
   margin-right: 8px;
-  min-height: 1.5rem;
+  min-height: 1.6rem;
 }
 
 .Form__btn {
@@ -55,23 +61,46 @@
 
 /* Todo.jsx */
 .Todo__li-element {
+  display: flex;
   list-style: none;
   border: 1px solid #282c34;
   margin-right: 5px;
   width: 25rem;
   padding: 3px 6px;
   background: #ccc;
-  color: #282c34;
+  font-size: 1.4rem;
 }
 .Todo__line-through {
   text-decoration: line-through;
 }
+.Todo__input {
+  background-color: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: #282c34;
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+.Todo__input[type="text"] {
+  display: block;
+  max-width: 98%;
+}
 
+.Form__btn,
 .Todo__btn {
   margin: 0px 3px;
+  cursor: pointer;
+  padding: 0.2em 1em;
+  border-radius: 0.25em;
+  outline: none;
 }
 
 /* icons */
 .fa-plus {
   color: #282c34;
+}
+.fa-trash-alt,
+.fa-edit,
+.fa-check {
+  pointer-events: none;
 }

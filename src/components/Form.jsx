@@ -14,17 +14,20 @@ export default function Form({
 
   // function to handle what happens 'onClick' of submit button
   const handleSubmit = (e) => {
-    setTaskList([
-      // spread-operator (preserve/pass existing data of array)
-      ...taskList,
+    if (inputValue.trim()) {
+      setTaskList([
+        // spread-operator (preserve/pass existing data of array)
+        ...taskList,
 
-      // CREATE an OBJECT - each object will be added to our array []:
-      {
-        text: inputValue,
-        id: uuid(),
-        done: false,
-      },
-    ]);
+        // CREATE an OBJECT - each object will be added to our array []:
+        {
+          text: inputValue.trim(),
+          id: uuid(),
+          done: false,
+        },
+      ]);
+    }
+    document.querySelector(".Form__input").focus();
     setInputValue(""); // on submit, after object is created, (re)set input value to empty string
     e.preventDefault(); // function to prevent from Reload
   };
@@ -40,6 +43,8 @@ export default function Form({
         type="text"
         className="Form__input"
         value={inputValue}
+        placeholder="Please enter your new task."
+        maxLength="80"
       />
       <button onClick={handleSubmit} type="submit" className="Form__btn">
         <i className="fas fa-plus"></i>
