@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import TodoList from "./components/Todolist";
@@ -9,13 +9,26 @@ export default function App() {
   // In ( ) of our useState we pass the initial state/value, that can be any Javascript data type
   let [inputValue, setInputValue] = useState(""); // initial state is an empty string
   let [taskList, setTaskList] = useState([]); // initial state is an empty array
+
+  useEffect(() => {
+    let localTaskList = JSON.parse(
+      localStorage.getItem("localStorage-TaskList") || []
+    );
+    setTaskList(localTaskList);
+  }, []); // dependencyArray, remember:
+  // if empty --> only runs ONCE, when component is rendered initially
+
+  useEffect(() => {
+    localStorage.setItem("localStorage-TaskList", JSON.stringify(taskList));
+  }, [taskList]);
+
   return (
     <div className="App">
       <main className="App-main">
         <h1>ReactTodo </h1>
         <Form
-          setInputValue={setInputValue}
           inputValue={inputValue}
+          setInputValue={setInputValue}
           taskList={taskList}
           setTaskList={setTaskList}
         />
