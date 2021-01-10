@@ -7,8 +7,27 @@
 // create a Todo component
 // this is our list-element that will be rendered in the TodoList <ul>
 export default function Todo({ text, setTaskList, taskList, taskObject }) {
+  // pass value and key value as parameters:
+  const handleEditingTask = (e) => {
+    console.log(e.target.value);
+
+    setTaskList(
+      // 'loop' through
+      taskList.map((item) => {
+        if (item.id === taskObject.id) {
+          return {
+            ...item,
+            text: e.target.value,
+          };
+        }
+        return item; // in case, condition doesn't match, return item as it is
+      })
+    );
+  };
+
   const handleCheckBtn = () => {
     setTaskList(
+      // 'loop' through
       taskList.map((item) => {
         if (item.id === taskObject.id) {
           return {
@@ -16,22 +35,27 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
             done: !item.done,
           };
         }
-        return item;
+        return item; // in case, condition doesn't match, return item as it is
       })
     );
   };
   return (
     <div className="Todo__div">
-      <li
-        className={`Todo__li-element ${
-          taskObject.done ? "Todo__line-through" : ""
-        }`}
-      >
-        {text}
+      <li className={`Todo__li-element `}>
+        <input
+          // based on value of done, add class to existing class or do nothing
+          className={`Todo__input ${
+            taskObject.done ? "Todo__line-through" : ""
+          }`}
+          type="text"
+          maxLength="80"
+          value={text}
+          onChange={handleEditingTask}
+        />
       </li>
       <button onClick={handleCheckBtn} className="Todo__btn Todo__btn-check">
-        <i
-          className={`fas fa-check ${taskObject.done ? "fas fa-plus" : ""}`}
+        <i // based on value of done, change class for corresponding icon
+          className={` ${taskObject.done ? "fas fa-plus" : "fas fa-check"}`}
         ></i>
       </button>
       <button className="Todo__btn Todo__btn-trash">

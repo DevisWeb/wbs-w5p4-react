@@ -44,6 +44,7 @@ export default function Form({
         className="Form__input"
         value={inputValue}
         placeholder="Please enter your new task."
+        maxLength="80"
       />
       <button onClick={handleSubmit} type="submit" className="Form__btn">
         <i className="fas fa-plus"></i>
