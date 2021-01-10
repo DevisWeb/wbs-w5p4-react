@@ -7,7 +7,7 @@
 // create a Todo component
 // this is our list-element that will be rendered in the TodoList <ul>
 export default function Todo({ text, setTaskList, taskList, taskObject }) {
-  const handleCheck = () => {
+  const handleCheckBtn = () => {
     setTaskList(
       taskList.map((item) => {
         if (item.id === taskObject.id) {
@@ -29,7 +29,7 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
       >
         {text}
       </li>
-      <button onClick={handleCheck} className="Todo__btn Todo__btn-check">
+      <button onClick={handleCheckBtn} className="Todo__btn Todo__btn-check">
         <i
           className={`fas fa-check ${taskObject.done ? "fas fa-plus" : ""}`}
         ></i>
