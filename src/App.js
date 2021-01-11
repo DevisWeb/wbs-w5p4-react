@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import ButtonMainTheme from "./components/Controls/Buttonmaintheme";
 import Form from "./components/Form";
-import Todo from "./components/Todo";
 import TodoList from "./components/Todolist";
 
 export default function App() {
