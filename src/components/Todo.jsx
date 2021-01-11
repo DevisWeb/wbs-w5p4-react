@@ -1,16 +1,9 @@
 // component: Todo
+// This component is our list-element that will be rendered in the TodoList <ul>
+// Each Todo can be edited, deleted, marked as done
 
-// function will run everytime the input changes: to get input value 'onChange' of our input-field
-
-// const newList = list.filter((item) => item.id !== id);
-
-// create a Todo component
-// this is our list-element that will be rendered in the TodoList <ul>
 export default function Todo({ text, setTaskList, taskList, taskObject }) {
-  // pass value and key value as parameters:
   const handleEditingTask = (e) => {
-    console.log(e.target.value);
-
     setTaskList(
       // 'loop' through
       taskList.map((item) => {
@@ -27,7 +20,6 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
 
   const handleCheckBtn = () => {
     setTaskList(
-      // 'loop' through
       taskList.map((item) => {
         if (item.id === taskObject.id) {
           return {
@@ -35,7 +27,7 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
             done: !item.done,
           };
         }
-        return item; // in case, condition doesn't match, return item as it is
+        return item;
       })
     );
   };
@@ -43,6 +35,7 @@ export default function Todo({ text, setTaskList, taskList, taskObject }) {
   const handleDelete = () => {
     setTaskList(taskList.filter((item) => item.id !== taskObject.id));
   };
+
   return (
     <div className="Todo__div">
       <li className={`Todo__li-element `}>

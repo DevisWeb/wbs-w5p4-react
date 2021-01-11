@@ -4,7 +4,6 @@
 
 .App {
   text-align: center;
-  background-color: #282c34;
 }
 .App-main {
   min-height: 100vh;
@@ -37,6 +36,43 @@
   background: rgba(97, 218, 251, 0.2);
   padding: 1rem;
 }
+.App-main__vertical:empty {
+  background: none;
+}
+.App-main input {
+  border-radius: 0.25em;
+  color: rgba(40, 44, 52, 0.8);
+}
+.App-main button {
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+  outline: none;
+}
+.App-main button:hover i {
+  color: rgb(40, 44, 52);
+}
+
+.App-main__Btn {
+  padding: 0.2rem 0.75rem;
+  margin-bottom: 1.2rem;
+  color: rgba(49, 145, 151, 0.7);
+  background: #f1f1f1;
+}
+.App-main .App-main__Btn:hover {
+  color: rgba(49, 145, 151);
+  background: white;
+}
+.App-main_theme-light {
+  background: #fff;
+  color: rgba(49, 145, 151, 0.7);
+}
+.App-main_theme-dark {
+  background: #282c34;
+}
+.App-main_theme-light .App-main__vertical {
+  background: none;
+}
 
 /* Stylings for Components - todo later-on: Move to seperate css.files for components */
 
@@ -46,10 +82,13 @@
   width: 25rem;
   margin-right: 8px;
   min-height: 1.6rem;
+  height: 1.8rem;
+  border: 1px solid rgba(49, 145, 151, 0.5);
 }
 
 .Form__btn {
   background: white;
+  height: 2rem;
 }
 
 /* TodoList.jsx*/
@@ -60,18 +99,26 @@
 }
 
 /* Todo.jsx */
+.App-main_theme-dark .Todo__li-element {
+  background: #f1f1f1;
+}
 .Todo__li-element {
   display: flex;
   list-style: none;
-  border: 1px solid #282c34;
+  border: 1px solid rgba(49, 145, 151, 0.5);
+  border-radius: 0.2rem;
   margin-right: 5px;
   width: 25rem;
   padding: 3px 6px;
-  background: #ccc;
+  background: #f1f1f1;
   font-size: 1.4rem;
 }
-.Todo__line-through {
+
+.Todo__input.Todo__line-through {
   text-decoration: line-through;
+  text-decoration-color: rgba(49, 145, 151);
+  color: rgba(49, 145, 151, 0.9);
+  font-style: italic;
 }
 .Todo__input {
   background-color: transparent;
@@ -89,18 +136,14 @@
 .Form__btn,
 .Todo__btn {
   margin: 0px 3px;
-  cursor: pointer;
-  padding: 0.2em 1em;
-  border-radius: 0.25em;
-  outline: none;
+  padding: 0.2rem 1rem;
 }
 
 /* icons */
-.fa-plus {
-  color: #282c34;
-}
+.fa-plus,
 .fa-trash-alt,
 .fa-edit,
 .fa-check {
   pointer-events: none;
+  color: rgba(40, 44, 52, 0.6);
 }
