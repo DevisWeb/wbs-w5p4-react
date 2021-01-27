@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wbs-w5p4-react/static/css/main.74e725ad.chunk.css",
-    "main.js": "/wbs-w5p4-react/static/js/main.eec30172.chunk.js",
-    "main.js.map": "/wbs-w5p4-react/static/js/main.eec30172.chunk.js.map",
+    "main.css": "/wbs-w5p4-react/static/css/main.5accb445.chunk.css",
+    "main.js": "/wbs-w5p4-react/static/js/main.c5e643f4.chunk.js",
+    "main.js.map": "/wbs-w5p4-react/static/js/main.c5e643f4.chunk.js.map",
     "runtime-main.js": "/wbs-w5p4-react/static/js/runtime-main.06996b05.js",
     "runtime-main.js.map": "/wbs-w5p4-react/static/js/runtime-main.06996b05.js.map",
     "static/js/2.eebf2a19.chunk.js": "/wbs-w5p4-react/static/js/2.eebf2a19.chunk.js",
     "static/js/2.eebf2a19.chunk.js.map": "/wbs-w5p4-react/static/js/2.eebf2a19.chunk.js.map",
     "index.html": "/wbs-w5p4-react/index.html",
-    "static/css/main.74e725ad.chunk.css.map": "/wbs-w5p4-react/static/css/main.74e725ad.chunk.css.map",
+    "static/css/main.5accb445.chunk.css.map": "/wbs-w5p4-react/static/css/main.5accb445.chunk.css.map",
     "static/js/2.eebf2a19.chunk.js.LICENSE.txt": "/wbs-w5p4-react/static/js/2.eebf2a19.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.06996b05.js",
     "static/js/2.eebf2a19.chunk.js",
-    "static/css/main.74e725ad.chunk.css",
-    "static/js/main.eec30172.chunk.js"
+    "static/css/main.5accb445.chunk.css",
+    "static/js/main.c5e643f4.chunk.js"
   ]
 }
