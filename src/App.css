@@ -36,6 +36,7 @@
   background: rgba(97, 218, 251, 0.2);
   padding: 1rem;
 }
+.App-main_theme-light .App-main__vertical,
 .App-main__vertical:empty {
   background: none;
 }
@@ -70,8 +71,16 @@
 .App-main_theme-dark {
   background: #282c34;
 }
+
 .App-main_theme-light .App-main__vertical {
+  border: 1px solid #ccc;
+  background: rgba(49, 145, 151, 0.1);
+  border-radius: 5px;
+}
+
+.App-main_theme-light .App-main__vertical:empty {
   background: none;
+  border: none;
 }
 
 /* Stylings for Components - todo later-on: Move to seperate css.files for components */
@@ -137,6 +146,13 @@
 .Todo__btn {
   margin: 0px 3px;
   padding: 0.2rem 1rem;
+}
+
+.App-main_theme-light .Todo__btn {
+  border: 1px solid rgba(49, 145, 151, 0.5);
+}
+.App-main_theme-light .Todo__btn:hover {
+  background: white;
 }
 
 /* icons */
