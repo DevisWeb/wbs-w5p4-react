@@ -13,10 +13,9 @@ export default function App() {
   let [theme, setTheme] = useState("App-main_theme-light");
 
   useEffect(() => {
-    let localTaskList = JSON.parse(
-      localStorage.getItem("localStorage-TaskList") || []
-    );
-    setTaskList(localTaskList);
+    localStorage.getItem("localStorage-TaskList") === null
+      ? localStorage.setItem("localStorage-TaskList", JSON.stringify([]))
+      : setTaskList(JSON.parse(localStorage.getItem("localStorage-TaskList")));
   }, []); // dependencyArray, remember:
   // if empty --> only runs ONCE, when component is rendered initially
 
